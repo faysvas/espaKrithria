@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>ΕΣΠΑ ΚΑΔ</title>
+  <meta name="description" content='Εφαρμογή για εύκολη αναζήτηση και πλοήγηση στους Επιλέξιμους Κωδικούς Αριθμούς Δραστηριοτήτων (ΚΑΔ) των προγραμμάτων ΕΣΠΑ "Ενίσχυση της αυτοαπασχόλησης πτυχιούχων τριτοβάθμιας εκπαίδευσης", "Ενίσχυση τουριστικών μικρομεσαίων επιχειρήσεων (ΜΜΕ) για τον εκσυγχρονισμό τους και την ποιοτική αναβάθμιση των παρεχόμενων υπηρεσιών", "Νεοφυής Επιχειρηματικότητα" και "Αναβάθμιση πολύ μικρών & μικρών υφιστάμενων επιχειρήσεων με την ανάπτυξη των ικανοτήτων τους στις νέες αγορές".'>
+  <meta name="keywords" content="espa,espakad,εσπα,ΚΑΔ">
+  <meta name="author" content="Golfo Vasiliou">
+
+<meta charset="UTF-8">
+
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/custom.css">
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+
+ <!--external css-->
+
+        
+    <!-- Custom styles for this template -->
+
+<style>
+
+</style>
+</head>
+<body>
+
+<div class="container"  ng-cloak ng-app="espaApp" >
+<div class="row">
+<header class="col-sm-12 text-center "><h1>ΕΣΠΑ ΚΑΔ</h1><p>Αναζήτηση με βάση πολλαπλά κριτήρια στους Κωδικούς Αριθμούς Δραστηριοτήτων για τα Προγράμματα ΕΣΠΑ</p><hr>
+</header>
+</div>
+
+<ul class="nav nav-tabs" role="tablist">
+
+    <li class="active" role="presentation" ><a href="#/neofueis" aria-controls="neofueis" role="tab" data-toggle="tab">Νεοφυής Επιχειρηματικότητα</a></li>
+    <li role="presentation"><a href="#/ptuxiouxoi" aria-controls="ptuxiouxoi" role="tab" data-toggle="tab">Αυτοαπασχόληση Πτυχιούχων</a></li>
+	<li role="presentation"><a href="#/touristikes" aria-controls="touristikes" role="tab" data-toggle="tab">Τουριστικές Επιχειρήσεις</a></li>
+	<li role="presentation"><a href="#/mikromesaies" aria-controls="mikromesaies" role="tab" data-toggle="tab">Μικρομεσαίες Επιχειρήσεις</a></li>
+    <li class="pull-right" role="presentation"><a href="#/help" aria-controls="mikromesaies" role="tab" data-toggle="tab">Βοήθεια</a></li>
+  </ul>
+<div class="row">
+<main class="col-sm-12">
+   <div  ng-view>
+
+
+  
+  </div>
+
+	</div>
+</main>
+<footer class="row text-center footer">
+Made by <a href="https://github.com/faysvas">Golfo Vasiliou</a> and hosted on <a href="https://github.com/faysvas/espakad">Github</a>.
+</footer>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js" ></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-filter/0.5.8/angular-filter.min.js"></script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular-animate.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular-route.min.js"></script>
+<script src="js/dirPagination.js"></script>
+ <script src="js/app.js"></script>
+ <script src="js/helpers.js"></script>
+  <script src="js/controllers.js"></script>
+  
+
+  <!-- js placed at the end of the document so the pages load faster -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-72072834-3', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+</body>
+</html>
