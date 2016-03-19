@@ -4,13 +4,23 @@ espaApp.service('helpers', function () {
 $('.nav-tabs a').parents('li').removeClass('active');
 $('.nav-tabs a[href="#/'+location+'"]').parents('li').addClass('active');	
 		},
-		sort:function($scope){
-			 $scope.sort = function(keyname){
-        $scope.sortKey = keyname;   //set the sortKey to the param passed
-        $scope.reverse = !$scope.reverse; //if true make it false and vice versa
-    }
+		changeValue:function(select){
+			
+			
+		var num=0;
+			if(select[select.length-2]==":"){
+			num=parseInt(select.slice(-1),10);		
+			}else{
+			num=parseInt(select.slice(-2),10);	
+			}
+			
+		return num;
+		
+		}, 
+		
+	changeValueRange:function($scope){
+		
 		}
-	
 	};
 
     });
