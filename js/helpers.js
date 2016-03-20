@@ -18,7 +18,16 @@ $('.nav-tabs a[href="#/'+location+'"]').parents('li').addClass('active');
 		
 		}, 
 		
-	changeValueRange:function($scope){
+	changeValueRange:function(select,minmax){
+		var regex = /\d+/g;
+
+var matches = select.match(regex);  // creates array from matches
+
+if(minmax=="min"){
+	return matches[0];
+}else if(minmax=="max"){
+	return matches[1];
+}
 		
 		}
 	};

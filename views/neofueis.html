@@ -5,8 +5,8 @@
 <div class="row">
   <div class="col-xs-12">
   <div class="form-group">
-  <label for="kathgoria">Κατηγορία Δικαιούχου</label>
-  <select class="form-control" id="kathgoria">
+  <label for="kathgoria">Επιλέξτε Κατηγορία Δικαιούχου</label>
+  <select ng-model="kathgoriaDikaiouxou" class="form-control" id="kathgoria">
     <option>Κατηγορία Δικαιούχων - Α (Άνεργοι)</option>
     <option>Κατηγορία Δικαιούχων - Β (Ασκούντες επαγγελματική δραστηριότητα)</option>
   </select>
@@ -31,7 +31,7 @@
   
 </div>
 
-<div class="row">
+<div class="row" ng-show="kathgoriaDikaiouxou=='Κατηγορία Δικαιούχων - Α (Άνεργοι)'">
 
   <div class="col-xs-1">
     Ι.2.1
@@ -40,16 +40,19 @@
     Ιδιότητα ανέργου κατά την υποβολή του επιχειρηματικού
 σχεδίου
   </div>
+  
   <div class="col-xs-1">
-   <label class="radio-inline"><input type="radio" name="optradio"></label>
+   <div class="radio"><label class="radio-inline"><input type="radio" name="i21" ng-model="i21Yes"></label> </div>
   </div>
    <div class="col-xs-1">
-    <label class="radio-inline"><input type="radio" name="optradio"></label>
+    <div class="radio"><label class="radio-inline"><input type="radio" name="i21" ng-model="i21No"></label>
+	<span class="glyphicon glyphicon-ok" aria-hidden="true" ng-show="i21Yes"></span>
+	<span class="glyphicon glyphicon-remove" aria-hidden="true" ng-show="i21No"></span></div>
   </div>
   
 </div>
 
-<div class="row">
+<div class="row" ng-show="kathgoriaDikaiouxou=='Κατηγορία Δικαιούχων - Β (Ασκούντες επαγγελματική δραστηριότητα)'">
 
   <div class="col-xs-1">
     Ι.2.1
@@ -69,16 +72,22 @@
 δραστηριότητα (αποκλειόμενης της αγροτικής δραστηριότητας
 – φορολογικό έτος 2015).
   </div>
+  <div class="btn-group" data-toggle="buttons">
   <div class="col-xs-1">
-   <label class="radio-inline"><input type="radio" name="optradio"></label>
+   <div class="radio"><label class="radio-inline"><input type="radio" name="i21" ng-model="i21Yes"></label></div>
   </div>
    <div class="col-xs-1">
-    <label class="radio-inline"><input type="radio" name="optradio"></label>
+    <div class="radio"><label class="radio-inline"><input type="radio" name="i21" ng-model="i21No"></label>
+	
+	</div>
+	<span class="glyphicon glyphicon-ok" aria-hidden="true" ng-show="i21Yes"></span>
+	<span class="glyphicon glyphicon-remove" aria-hidden="true" ng-show="i21No"></span>
+  </div>
   </div>
   
 </div>
 
-<div class="row">
+<div class="row" ng-show="kathgoriaDikaiouxou">
 
   <div class="col-xs-1">
     Ι.2.2
@@ -86,16 +95,19 @@
   <div class="col-xs-9">
   Επιλεξιμότητα ΚΑΔ της υπό σύσταση επιχείρησης
   </div>
+  
   <div class="col-xs-1">
-   <label class="radio-inline"><input type="radio" name="optradio"></label>
+  <div class="radio"> <label class="radio-inline"><input type="radio" name="i22" ng-model="i22Yes"></label></div>
   </div>
    <div class="col-xs-1">
-    <label class="radio-inline"><input type="radio" name="optradio"></label>
+    <div class="radio"><label class="radio-inline"><input type="radio" name="i22" ng-model="i22No"></label>
+	<span class="glyphicon glyphicon-ok" aria-hidden="true" ng-show="i22Yes"></span>
+	<span class="glyphicon glyphicon-remove" aria-hidden="true" ng-show="i22No"></span></div>
   </div>
-  
+ 
 </div>
 
-<div class="row">
+<div class="row" ng-show="kathgoriaDikaiouxou">
 
   <div class="col-xs-1">
     Ι.2.3
@@ -118,15 +130,17 @@
 του Ε.Π. ή τον αρμόδιο ΕΦ.
   </div>
   <div class="col-xs-1">
-   <label class="radio-inline"><input type="radio" name="optradio"></label>
+   <div class="radio"><label class="radio-inline"><input type="radio" name="i23" ng-model="i23Yes"></label></div>
   </div>
    <div class="col-xs-1">
-    <label class="radio-inline"><input type="radio" name="optradio"></label>
+    <div class="radio"><label class="radio-inline"><input type="radio" name="i23" ng-model="i23No"></label>
+	<span class="glyphicon glyphicon-ok" aria-hidden="true" ng-show="i23Yes"></span>
+	<span class="glyphicon glyphicon-remove" aria-hidden="true" ng-show="i23No"></span></div>
   </div>
   
 </div>
 
-<div class="row">
+<div class="row" ng-show="kathgoriaDikaiouxou">
 
   <div class="col-xs-1">
     Ι.2.4
@@ -137,10 +151,13 @@
 επιχειρηματικού σχεδίου.
   </div>
   <div class="col-xs-1">
-   <label class="radio-inline"><input type="radio" name="optradio"></label>
+   <div class="radio"><label class="radio-inline"><input type="radio" name="i24" ng-model="i24Yes"></label></div>
   </div>
    <div class="col-xs-1">
-    <label class="radio-inline"><input type="radio" name="optradio"></label>
+    <div class="radio"><label class="radio-inline"><input type="radio" name="i24" ng-model="i24No"></label>
+	<span class="glyphicon glyphicon-ok" aria-hidden="true" ng-show="i24Yes"></span>
+	<span class="glyphicon glyphicon-remove" aria-hidden="true" ng-show="i24No"></span>
+	</div>
   </div>
   
 </div>
@@ -157,10 +174,12 @@
 πληροφόρηση και τη διάχυση των αποτελεσμάτων 
   </div>
   <div class="col-xs-1">
-   <label class="radio-inline"><input type="radio" name="optradio"></label>
+   <div class="radio"><label class="radio-inline"><input type="radio" name="ii1" ng-model="ii1Yes"></label></div>
   </div>
    <div class="col-xs-1">
-    <label class="radio-inline"><input type="radio" name="optradio"></label>
+    <div class="radio"><label class="radio-inline"><input type="radio" name="ii1" ng-model="ii1No"></label>
+	<span class="glyphicon glyphicon-ok" aria-hidden="true" ng-show="ii1Yes"></span>
+	<span class="glyphicon glyphicon-remove" aria-hidden="true" ng-show="ii1No"></span></div>
   </div>
   
 </div>
@@ -173,10 +192,12 @@
 Τήρηση των εθνικών και ενωσιακών κανόνων που αφορούν κρατικές ενισχύσεις.
   </div>
   <div class="col-xs-1">
-   <label class="radio-inline"><input type="radio" name="optradio"></label>
+   <div class="radio"><label class="radio-inline"><input type="radio" name="ii2" ng-model="ii2Yes"></label></div>
   </div>
    <div class="col-xs-1">
-    <label class="radio-inline"><input type="radio" name="optradio"></label>
+    <div class="radio"><label class="radio-inline"><input type="radio" name="ii2" ng-model="ii2No"></label>
+	<span class="glyphicon glyphicon-ok" aria-hidden="true" ng-show="ii2Yes"></span>
+	<span class="glyphicon glyphicon-remove" aria-hidden="true" ng-show="ii2No"></span></div>
   </div>
   
 </div>
@@ -191,10 +212,13 @@
 διάκρισης και της προσβασιμότητας για τα ΑμεΑ
   </div>
   <div class="col-xs-1">
-   <label class="radio-inline"><input type="radio" name="optradio"></label>
+   <div class="radio"><label class="radio-inline"><input type="radio" name="ii3" ng-model="ii3Yes"></label></div>
   </div>
    <div class="col-xs-1">
-    <label class="radio-inline"><input type="radio" name="optradio"></label>
+   <div class="radio"> <label class="radio-inline"><input type="radio" name="ii3" ng-model="ii3No"></label>
+   <span class="glyphicon glyphicon-ok" aria-hidden="true" ng-show="ii3Yes"></span>
+	<span class="glyphicon glyphicon-remove" aria-hidden="true" ng-show="ii3No"></span>
+   </div>
   </div>
   
 </div>
@@ -208,41 +232,26 @@
    A.1
   </div>
   <div class="col-xs-9">
-Περιγραφή του Επιχειρηματικού Σχεδίου
-<p>
-  </div>
-  <div class="col-xs-2">
-20%
-  </div>  
-</div>
-
-<div class="row">
-
-  <div class="col-xs-1">
- 
-  </div>
-  <div class="col-xs-9">
-Παρουσίαση του Επιχειρηματικού Σχεδίου –Ανάλυση της Επιχειρηματικής Ιδέας-
+<h4>Περιγραφή του Επιχειρηματικού Σχεδίου - 20%</h4>
+<p>Παρουσίαση του Επιχειρηματικού Σχεδίου –Ανάλυση της Επιχειρηματικής Ιδέας-
 Παραγόμενα Προϊόντα /Υπηρεσίες– Αγορά Στόχος.
 Εξετάζεται και αξιολογείται η σαφήνεια και πληρότητα της περιγραφής του
 επιχειρηματικού σχεδίου.
 (Στο κριτήριο αυτό χρησιμοποιείται ελεύθερα εύρος τιμών από τον Αξιολογητή όλη η
-κλίμακα (1 έως 10) και όχι προκαθορισμένες τιμές).
-
+κλίμακα (1 έως 10) και όχι προκαθορισμένες τιμές).</p>
   </div>
   <div class="col-xs-2">
 <div class="form-group">
-  <label for="kathgoria">Επιλέξτε Βαθμολογία</label>
+  <label >Βαθμολογία</label>
   <select class="form-control" ng-model="selectA1" ng-change="changeA1(selectA1)">
     <option>Πολύ Καλή:8-10</option>
     <option>Καλή:5-7</option>
 	<option>Ανεπαρκής:0-4</option>
   </select>
 </div>
-  </div>
-
-  
+  </div>  
 </div>
+
 
 
 <div class="row">
@@ -251,39 +260,25 @@
    A.2
   </div>
   <div class="col-xs-9">
-Συνάφεια του επιχειρηματικού σχεδίου με τη στρατηγική έξυπνης εξειδίκευσης
-της Περιφέρειας δραστηριοποίησης
-<p>
-  </div>
-  <div class="col-xs-2">
-25%
-  </div>  
-</div>
-
-<div class="row">
-
-  <div class="col-xs-1">
- 
-  </div>
-  <div class="col-xs-9">
-Εξετάζεται και αξιολογείται η συνάφεια του επιχειρηματικού σχεδίου της νεοφυούς
+<h4>Συνάφεια του επιχειρηματικού σχεδίου με τη στρατηγική έξυπνης εξειδίκευσης
+της Περιφέρειας δραστηριοποίησης - 25%</h4>
+<p>Εξετάζεται και αξιολογείται η συνάφεια του επιχειρηματικού σχεδίου της νεοφυούς
 επιχείρησης με τις θεματικές προτεραιότητες της στρατηγικής έξυπνης εξειδίκευσης της
 Περιφέρειας στην οποία σχεδιάζεται να εγκατασταθεί και να δραστηριοποιηθεί η
-επιχείρηση.
-
+επιχείρηση.</p>
   </div>
   <div class="col-xs-2">
 <div class="form-group">
-  <label for="kathgoria">Ύπαρξη Συνάφειας</label>
+  <label >Ύπαρξη Συνάφειας</label>
   <select class="form-control" ng-model="selectA2" ng-change="changeA2(selectA2)">
     <option>Υπάρχει συνάφεια:10</option>
     <option>Δεν υπάρχει συνάφεια:0</option>
   </select>
 </div>
-  </div>
-
-  
+  </div>  
 </div>
+
+
 
 <div class="row">
 
@@ -291,27 +286,13 @@
    A.3
   </div>
   <div class="col-xs-9">
-Βαθμός πρωτοτυπίας
-<p>
-  </div>
-  <div class="col-xs-2">
-25%
-  </div>  
-</div>
-
-<div class="row">
-
-  <div class="col-xs-1">
- 
-  </div>
-  <div class="col-xs-9">
-Εξετάζεται και βαθμολογείται ο βαθμός πρωτοτυπίας του προϊόντος/υπηρεσίας σε σχέση
-με τα ήδη διαθέσιμα στην αγορά.
-
+<h4>Βαθμός πρωτοτυπίας - 25%</h4>
+<p>Εξετάζεται και βαθμολογείται ο βαθμός πρωτοτυπίας του προϊόντος/υπηρεσίας σε σχέση
+με τα ήδη διαθέσιμα στην αγορά.</p>
   </div>
   <div class="col-xs-2">
 <div class="form-group">
-  <label for="kathgoria">Βαθμός Πρωτοτυπίας</label>
+  <label >Βαθμός Πρωτοτυπίας</label>
   <select class="form-control" ng-model="selectA3" ng-change="changeA3(selectA3)">
     <option>Νέο προϊόν/υπηρεσία:10</option>
     <option>Διαφοροποιημένο προϊόν/υπηρεσία:6</option>
@@ -319,10 +300,10 @@
 	<option>Δεν προσδιορίζεται προϊόν/υπηρεσία:0</option>
   </select>
 </div>
-  </div>
-
-  
+  </div>  
 </div>
+
+
 
 <div class="row">
 
@@ -330,27 +311,13 @@
    A.4
   </div>
   <div class="col-xs-9">
-Κατάσταση της αγοράς του κλάδου δραστηριοποίησης
-<p>
-  </div>
-  <div class="col-xs-2">
-5%
-  </div>  
-</div>
-
-<div class="row">
-
-  <div class="col-xs-1">
- 
-  </div>
-  <div class="col-xs-9">
-Εξετάζεται και βαθμολογείται η κατάσταση της αγοράς του κλάδου που θα
-δραστηριοποιηθεί.
-
+<h4>Κατάσταση της αγοράς του κλάδου δραστηριοποίησης - 5%</h4>
+<p>Εξετάζεται και βαθμολογείται η κατάσταση της αγοράς του κλάδου που θα
+δραστηριοποιηθεί.</p>
   </div>
   <div class="col-xs-2">
 <div class="form-group">
-  <label for="kathgoria">Κατάσταση αγοράς</label>
+  <label >Κατάσταση αγοράς</label>
   <select class="form-control" ng-model="selectA4" ng-change="changeA4(selectA4)">
     <option>Νέα δυναμική αγορά:10</option>
     <option>Αναπτυσσόμενη αγορά με αυξανόμενη ζήτηση:8</option>
@@ -362,10 +329,10 @@
 <option>Δεν τεκμηριώνεται:0</option>
   </select>
 </div>
-  </div>
-
-  
+  </div>  
 </div>
+
+
 
 
 <div class="row">
@@ -374,27 +341,13 @@
    A.5
   </div>
   <div class="col-xs-9">
-Στοιχεία Ανταγωνιστικότητας Προϊόντος/Υπηρεσίας
-<p>
-  </div>
-  <div class="col-xs-2">
-10%
-  </div>  
-</div>
-
-<div class="row">
-
-  <div class="col-xs-1">
- 
-  </div>
-  <div class="col-xs-9">
-Αξιολογείται το παραγόμενο προϊόν/υπηρεσία ως προς την ανταγωνιστικότητά του με
-κριτήρια την τιμή και την ποιότητα με βάση την τεκμηρίωση.
-
+<h4>Στοιχεία Ανταγωνιστικότητας Προϊόντος/Υπηρεσίας - 10%</h4>
+<p>Αξιολογείται το παραγόμενο προϊόν/υπηρεσία ως προς την ανταγωνιστικότητά του με
+κριτήρια την τιμή και την ποιότητα με βάση την τεκμηρίωση.</p>
   </div>
   <div class="col-xs-2">
 <div class="form-group">
-  <label for="kathgoria">Ανταγωνιστικότητα</label>
+  <label >Ανταγωνιστικότητα</label>
   <select class="form-control" ng-model="selectA5" ng-change="changeA5(selectA5)">
     <option>Ανταγωνιστικό ως προς τον συνδυασμό τιμής -
 ποιότητας:10</option>
@@ -404,10 +357,10 @@
 
   </select>
 </div>
-  </div>
-
-  
+  </div>  
 </div>
+
+
 
 <div class="row">
 
@@ -415,26 +368,12 @@
    A.6
   </div>
   <div class="col-xs-9">
-Ολοκληρωμένος χαρακτήρας της επένδυσης
-<p>
-  </div>
-  <div class="col-xs-2">
-10%
-  </div>  
-</div>
-
-<div class="row">
-
-  <div class="col-xs-1">
- 
-  </div>
-  <div class="col-xs-9">
-Εξετάζεται ο ολοκληρωμένος ή μη χαρακτήρας της προτεινόμενης επένδυσης.
-
+<h4>Ολοκληρωμένος χαρακτήρας της επένδυσης - 10%</h4>
+<p>Εξετάζεται ο ολοκληρωμένος ή μη χαρακτήρας της προτεινόμενης επένδυσης.</p>
   </div>
   <div class="col-xs-2">
 <div class="form-group">
-  <label for="kathgoria">Χαρακτήρας</label>
+  <label >Χαρακτήρας</label>
   <select class="form-control" ng-model="selectA6" ng-change="changeA6(selectA6)">
     <option>Πλήρης και λειτουργική επένδυση:10</option>
     <option>Μερικώς ολοκληρωμένη και λειτουργική:6</option>
@@ -443,10 +382,10 @@
 
   </select>
 </div>
-  </div>
-
-  
+  </div>  
 </div>
+
+
 
 
 <div class="row">
@@ -455,27 +394,13 @@
    A.7
   </div>
   <div class="col-xs-9">
-Ενέργειες Προώθησης προϊόντος/υπηρεσίας
-<p>
-  </div>
-  <div class="col-xs-2">
-5%
-  </div>  
-</div>
-
-<div class="row">
-
-  <div class="col-xs-1">
- 
-  </div>
-  <div class="col-xs-9">
-Αξιολογούνται οι σχεδιαζόμενες ενέργειες προώθησης, οι πρακτικές και πολιτικές
-marketing της επιχείρησης (π.χ. προώθηση, διαφήμιση, δημόσιες σχέσεις)
-
+<h4>Ενέργειες Προώθησης προϊόντος/υπηρεσίας - 5%</h4>
+<p>Αξιολογούνται οι σχεδιαζόμενες ενέργειες προώθησης, οι πρακτικές και πολιτικές
+marketing της επιχείρησης (π.χ. προώθηση, διαφήμιση, δημόσιες σχέσεις)</p>
   </div>
   <div class="col-xs-2">
 <div class="form-group">
-  <label for="kathgoria">Ενέργειες προώθησης</label>
+  <label >Ενέργειες προώθησης</label>
   <select class="form-control" ng-model="selectA7" ng-change="changeA7(selectA7)">
     <option>Στοχευμένες:10</option>
     <option>Επαρκείς:6</option>
@@ -483,10 +408,10 @@ marketing της επιχείρησης (π.χ. προώθηση, διαφήμι
 
   </select>
 </div>
-  </div>
-
-  
+  </div>  
 </div>
+
+
 <h3>Β. Ωριμότητα Επιχειρηματικού Σχεδίου. (Συντελεστής: 15%)</h3>
 <div class="row">
 
@@ -494,28 +419,15 @@ marketing της επιχείρησης (π.χ. προώθηση, διαφήμι
    B.1
   </div>
   <div class="col-xs-9">
-Χρονοδιάγραμμα ανάπτυξης παραγωγικής εγκατάστασης
-προϊόντος/υπηρεσίας
-<p>
-  </div>
-  <div class="col-xs-2">
-30%
-  </div>  
-</div>
-
-<div class="row">
-
-  <div class="col-xs-1">
- 
-  </div>
-  <div class="col-xs-9">
-Εξετάζεται η εφικτότητα υλοποίησης του έργου εντός του Χρονοδιαγράμματος και όχι
+<h4>Χρονοδιάγραμμα ανάπτυξης παραγωγικής εγκατάστασης
+προϊόντος/υπηρεσίας - 30%</h4>
+<p>Εξετάζεται η εφικτότητα υλοποίησης του έργου εντός του Χρονοδιαγράμματος και όχι
 πέραν της διετίας, λαμβάνοντας υπόψη το βαθμό ωριμότητας του και την
-πολυπλοκότητά των ενεργειών.
+πολυπλοκότητά των ενεργειών.</p>
   </div>
   <div class="col-xs-2">
 <div class="form-group">
-  <label for="kathgoria">Εφικτότητα</label>
+  <label >Εφικτότητα</label>
   <select class="form-control" ng-model="selectB1" ng-change="changeB1(selectB1)">
     <option>Εφικτό:10</option>
     <option>Οριακά εφικτό:5</option>
@@ -523,11 +435,8 @@ marketing της επιχείρησης (π.χ. προώθηση, διαφήμι
 
   </select>
 </div>
-  </div>
-
-  
+  </div>  
 </div>
-
 
 <div class="row">
 
@@ -535,27 +444,13 @@ marketing της επιχείρησης (π.χ. προώθηση, διαφήμι
    Β.2
   </div>
   <div class="col-xs-9">
-Απαιτήσεις Αδειοδότησης
-<p>
-  </div>
-  <div class="col-xs-2">
-20%
-  </div>  
-</div>
-
-<div class="row">
-
-  <div class="col-xs-1">
- 
-  </div>
-  <div class="col-xs-9">
-Εξετάζονται οι άδειες που απαιτούνται για την έναρξη υλοποίησης του επιχειρηματικού
-σχεδίου
-
+<h4>Απαιτήσεις Αδειοδότησης - 20%</h4>
+<p>Εξετάζονται οι άδειες που απαιτούνται για την έναρξη υλοποίησης του επιχειρηματικού
+σχεδίου</p>
   </div>
   <div class="col-xs-2">
 <div class="form-group">
-  <label for="kathgoria">Αδειοδότηση</label>
+  <label >Αδειοδότηση</label>
   <select class="form-control" ng-model="selectB2" ng-change="changeB2(selectB2)">
     <option>Δεν απαιτείται καμιά άδεια:10</option>
     <option>Απαιτείται άδεια εγκατάστασης ή/και
@@ -565,10 +460,10 @@ marketing της επιχείρησης (π.χ. προώθηση, διαφήμι
 
   </select>
 </div>
-  </div>
-
-  
+  </div>  
 </div>
+
+
 
 <div class="row">
 
@@ -576,28 +471,14 @@ marketing της επιχείρησης (π.χ. προώθηση, διαφήμι
    Β.3
   </div>
   <div class="col-xs-9">
-Προοπτικές πωλήσεων των προϊόντων/υπηρεσιών του επιχειρηματικού
-σχεδίου
-<p>
-  </div>
-  <div class="col-xs-2">
-50%
-  </div>  
-</div>
-
-<div class="row">
-
-  <div class="col-xs-1">
- 
-  </div>
-  <div class="col-xs-9">
-Εξετάζεται η ύπαρξη Συμφωνητικών ή και Προσυμφώνων πώλησης με υπεργολάβους,
-πελάτες, δίκτυα διανομής, αντιπροσώπους, λοιπές στρατηγικές συμμαχίες.
-
+<h4>Προοπτικές πωλήσεων των προϊόντων/υπηρεσιών του επιχειρηματικού
+σχεδίου - 50%</h4>
+<p>Εξετάζεται η ύπαρξη Συμφωνητικών ή και Προσυμφώνων πώλησης με υπεργολάβους,
+πελάτες, δίκτυα διανομής, αντιπροσώπους, λοιπές στρατηγικές συμμαχίες.</p>
   </div>
   <div class="col-xs-2">
 <div class="form-group">
-  <label for="kathgoria">Προοπτικές πωλήσεων</label>
+  <label >Προοπτικές πωλήσεων</label>
   <select class="form-control" ng-model="selectB3" ng-change="changeB3(selectB3)">
     <option>Συμβάσεις με συνεργάτες/ πελάτες:10</option>
     <option>MoUs και Lols:6</option>
@@ -606,10 +487,10 @@ marketing της επιχείρησης (π.χ. προώθηση, διαφήμι
 
   </select>
 </div>
-  </div>
-
-  
+  </div>  
 </div>
+
+
 <h3>Γ. Καινοτομία Επιχειρηματικού Σχεδίου. (Συντελεστής: 25%)</h3>
 <div class="row">
 
@@ -617,27 +498,13 @@ marketing της επιχείρησης (π.χ. προώθηση, διαφήμι
    Γ.1
   </div>
   <div class="col-xs-9">
-Ο εταίρος/οι εταίροι διαθέτει κατοχυρωμένο Δίπλωμα Ευρεσιτεχνίας
-<p>
-  </div>
-  <div class="col-xs-2">
-30%
-  </div>  
-</div>
-
-<div class="row">
-
-  <div class="col-xs-1">
- 
-  </div>
-  <div class="col-xs-9">
-Εξετάζεται η ύπαρξη ή μη κατοχυρωμένου διπλώματος ευρεσιτεχνίας (πατέντα)/
-αναγνωρισμένου τίτλου βιομηχανικής ή πνευματικής ιδιοκτησίας
-
+Ο εταίρος/οι εταίροι διαθέτει κατοχυρωμένο Δίπλωμα Ευρεσιτεχνίας - 30%
+<p>Εξετάζεται η ύπαρξη ή μη κατοχυρωμένου διπλώματος ευρεσιτεχνίας (πατέντα)/
+αναγνωρισμένου τίτλου βιομηχανικής ή πνευματικής ιδιοκτησίας</p>
   </div>
   <div class="col-xs-2">
 <div class="form-group">
-  <label for="kathgoria">Δίπλωμα</label>
+  <label >Δίπλωμα</label>
   <select class="form-control" ng-model="selectG1" ng-change="changeG1(selectG1)">
     <option>Ευρωπαϊκή ή τρίτης χώρας:10</option>
     <option>Εθνική:8</option>
@@ -646,10 +513,10 @@ marketing της επιχείρησης (π.χ. προώθηση, διαφήμι
 
   </select>
 </div>
-  </div>
-
-  
+  </div>  
 </div>
+
+
 
 <div class="row">
 
@@ -658,27 +525,13 @@ marketing της επιχείρησης (π.χ. προώθηση, διαφήμι
   </div>
   <div class="col-xs-9">
 Διάκριση προϊόντος ή υπηρεσίας του επιχειρηματικού σχεδίου σε διαγωνισμού
-Καινοτομίας
-<p>
-  </div>
-  <div class="col-xs-2">
-30%
-  </div>  
-</div>
-
-<div class="row">
-
-  <div class="col-xs-1">
- 
-  </div>
-  <div class="col-xs-9">
-Εξετάζονται οι αιτήσεις/συμμετοχές και διακρίσεις του εταίρου/ων. προϊόντος/υπηρεσίας
-σε διαγωνισμούς καινοτομίας
-
+Καινοτομίας - 30%
+<p>Εξετάζονται οι αιτήσεις/συμμετοχές και διακρίσεις του εταίρου/ων. προϊόντος/υπηρεσίας
+σε διαγωνισμούς καινοτομίας</p>
   </div>
   <div class="col-xs-2">
 <div class="form-group">
-  <label for="kathgoria">Διακρίσεις</label>
+  <label >Διακρίσεις</label>
   <select class="form-control" ng-model="selectG2" ng-change="changeG2(selectG2)">
     <option>Έχει διακριθεί (1ο/2ο/3ο βραβείο):10</option>
     <option>Απλή συμμετοχή:6</option>
@@ -686,10 +539,10 @@ marketing της επιχείρησης (π.χ. προώθηση, διαφήμι
 
   </select>
 </div>
-  </div>
-
-  
+  </div>  
 </div>
+
+
 <div class="row">
 
   <div class="col-xs-1">
@@ -697,29 +550,15 @@ marketing της επιχείρησης (π.χ. προώθηση, διαφήμι
   </div>
   <div class="col-xs-9">
 Διασφάλιση διευκολύνσεων της επιχείρησης από οργανωμένες επιχειρηματικές
-δομές φιλοξενίας
-<p>
-  </div>
-  <div class="col-xs-2">
-10%
-  </div>  
-</div>
-
-<div class="row">
-
-  <div class="col-xs-1">
- 
-  </div>
-  <div class="col-xs-9">
-Εξετάζεται αν ο εταίρος/ οι εταίροι της υπό σύσταση επιχείρησης πριν την ημερομηνία
+δομές φιλοξενίας - 10%
+<p>Εξετάζεται αν ο εταίρος/ οι εταίροι της υπό σύσταση επιχείρησης πριν την ημερομηνία
 δημοσίευσης της προκήρυξης έχει λάβει έγκριση από οργανωμένες επιχειρηματικές δομές
 για παροχή διευκολύνσεων όπως φιλοξενία/στέγαση, παροχή συμβουλευτικών
-υπηρεσιών υποστήριξης.
-
+υπηρεσιών υποστήριξης.</p>
   </div>
   <div class="col-xs-2">
 <div class="form-group">
-  <label for="kathgoria">Διευκολύνσεις</label>
+  <label >Διευκολύνσεις</label>
   <select class="form-control" ng-model="selectG3" ng-change="changeG3(selectG3)">
     <option>Ο εταίρος/ οι εταίροι της επιχείρησης έχει/έχουν
 λάβει έγκριση για συμμετοχή σε επιχειρηματικές
@@ -735,10 +574,9 @@ marketing της επιχείρησης (π.χ. προώθηση, διαφήμι
 
   </select>
 </div>
-  </div>
-
-  
+  </div>  
 </div>
+
 
 <div class="row">
 
@@ -746,27 +584,13 @@ marketing της επιχείρησης (π.χ. προώθηση, διαφήμι
    Γ.4
   </div>
   <div class="col-xs-9">
-Επίπεδο Ωριμότητας Καινοτόμου Προϊόντος /Υπηρεσίας
-<p>
-  </div>
-  <div class="col-xs-2">
-30%
-  </div>  
-</div>
-
-<div class="row">
-
-  <div class="col-xs-1">
- 
-  </div>
-  <div class="col-xs-9">
-Εξετάζεται το επίπεδο ωριμότητας του καινοτόμου προϊόντος/υπηρεσίας από το βασικό
-θεωρητικό σχεδιασμό μέχρι και την ετοιμότητα παραγωγής ή παροχής.
-
+<h4>Επίπεδο Ωριμότητας Καινοτόμου Προϊόντος /Υπηρεσίας - 30%</h4>
+<p>Εξετάζεται το επίπεδο ωριμότητας του καινοτόμου προϊόντος/υπηρεσίας από το βασικό
+θεωρητικό σχεδιασμό μέχρι και την ετοιμότητα παραγωγής ή παροχής.</p>
   </div>
   <div class="col-xs-2">
 <div class="form-group">
-  <label for="kathgoria">Επίπεδο ωριμότητας</label>
+  <label >Επίπεδο ωριμότητας</label>
   <select class="form-control" ng-model="selectG4" ng-change="changeG4(selectG4)">
     <option>Προϊόν/Υπηρεσία έτοιμο για παραγωγή ή παροχή:10</option>
     <option>Ώριμος σχεδιασμός προϊόντος ή υπηρεσίας:8</option>
@@ -778,10 +602,10 @@ marketing της επιχείρησης (π.χ. προώθηση, διαφήμι
 
   </select>
 </div>
-  </div>
-
-  
+  </div>  
 </div>
+
+
 
 <h3> Δ. Βιωσιμότητα Νεοφυούς Επιχείρησης (Συντελεστής: 10%)</h3>
 <div class="row">
@@ -790,28 +614,14 @@ marketing της επιχείρησης (π.χ. προώθηση, διαφήμι
    Δ.1
   </div>
   <div class="col-xs-9">
-Βεβαιώσεις εκδήλωσης ενδιαφέροντος από venture capitals ή πρόθεσης
-δανειοδότησης από Τράπεζες.
-<p>
-  </div>
-  <div class="col-xs-2">
-30%
-  </div>  
-</div>
-
-<div class="row">
-
-  <div class="col-xs-1">
- 
-  </div>
-  <div class="col-xs-9">
-Προσκομίζονται και εξετάζονται βεβαιώσεις εκδήλωσης ενδιαφέροντος από VCs για
-χρηματοδότηση της επένδυσης ή βεβαιώσεις έγκρισης δανειοδότησης από Τράπεζες.
-
+<h4>Βεβαιώσεις εκδήλωσης ενδιαφέροντος από venture capitals ή πρόθεσης
+δανειοδότησης από Τράπεζες - 30%</h4>
+<p>Προσκομίζονται και εξετάζονται βεβαιώσεις εκδήλωσης ενδιαφέροντος από VCs για
+χρηματοδότηση της επένδυσης ή βεβαιώσεις έγκρισης δανειοδότησης από Τράπεζες.</p>
   </div>
   <div class="col-xs-2">
 <div class="form-group">
-  <label for="kathgoria">Εκδήλωση ενδιαφέροντος</label>
+  <label >Εκδήλωση ενδιαφέροντος</label>
   <select class="form-control" ng-model="selectD1" ng-change="changeD1(selectD1)">
     <option>Εκδήλωση ενδιαφέροντος από VCs:10</option>
     <option>Πρόθεση δανειοδότησης από Τράπεζες:6</option>
@@ -819,9 +629,7 @@ marketing της επιχείρησης (π.χ. προώθηση, διαφήμι
 
   </select>
 </div>
-  </div>
-
-  
+  </div>  
 </div>
 
 <div class="row">
@@ -830,28 +638,14 @@ marketing της επιχείρησης (π.χ. προώθηση, διαφήμι
    Δ.2
   </div>
   <div class="col-xs-9">
-Προβλέψεις Εσόδων- Εξόδων της επιχείρησης
-<p>
-  </div>
-  <div class="col-xs-2">
-70%
-  </div>  
-</div>
-
-<div class="row">
-
-  <div class="col-xs-1">
- 
-  </div>
-  <div class="col-xs-9">
-Εξετάζονται η τεκμηρίωση των δαπανών που προβλέπονται στο επιχειρηματικό σχέδιο
+<h4>Προβλέψεις Εσόδων - Εξόδων της επιχείρησης - 70%</h4>
+<p>Εξετάζονται η τεκμηρίωση των δαπανών που προβλέπονται στο επιχειρηματικό σχέδιο
 καθώς και οι προβλέψεις των οικονομικών της επιχείρησης (έσοδα- έξοδα) για την περίοδο
-υλοποίησης του επιχειρηματικού σχεδίου καθώς και για τρία έτη από την ολοκλήρωσή του.
-
+υλοποίησης του επιχειρηματικού σχεδίου καθώς και για τρία έτη από την ολοκλήρωσή του.</p>
   </div>
   <div class="col-xs-2">
 <div class="form-group">
-  <label for="kathgoria">Τεκμηρίωση</label>
+  <label >Τεκμηρίωση</label>
   <select class="form-control" ng-model="selectD2" ng-change="changeD2(selectD2)">
     <option>Πλήρης τεκμηρίωση:10</option>
     <option>Μερική τεκμηρίωση:6</option>
@@ -859,10 +653,9 @@ marketing της επιχείρησης (π.χ. προώθηση, διαφήμι
 
   </select>
 </div>
-  </div>
-
-  
+  </div>  
 </div>
+
 
 <h3>Ε. Χαρακτηριστικά Εταίρων. (Συντελεστής: 25%)</h3>
 <div class="row">
@@ -871,26 +664,12 @@ marketing της επιχείρησης (π.χ. προώθηση, διαφήμι
    E.1
   </div>
   <div class="col-xs-9">
-Τίτλοι Σπουδών Εταίρου/ων
-<p>
-  </div>
-  <div class="col-xs-2">
-15%
-  </div>  
-</div>
-
-<div class="row">
-
-  <div class="col-xs-1">
- 
-  </div>
-  <div class="col-xs-9">
-Βαθμολογούνται οι δηλωθέντες τίτλοι σπουδών του/ων εταίρου/ων.
-
+<h4>Τίτλοι Σπουδών Εταίρου/ων - 15%</h4>
+<p>Βαθμολογούνται οι δηλωθέντες τίτλοι σπουδών του/ων εταίρου/ων.</p>
   </div>
   <div class="col-xs-2">
 <div class="form-group">
-  <label for="kathgoria">Τίτλος σπουδών</label>
+  <label >Τίτλος σπουδών</label>
   <select class="form-control" ng-model="selectE1" ng-change="changeE1(selectE1)">
     <option>Ύπαρξη μεταδευτεροβάθμιου/τριτοβάθμιου
 τίτλου σπουδών:10</option>
@@ -899,10 +678,10 @@ marketing της επιχείρησης (π.χ. προώθηση, διαφήμι
 
   </select>
 </div>
-  </div>
-
-  
+  </div>  
 </div>
+
+
 
 <div class="row">
 
@@ -910,36 +689,22 @@ marketing της επιχείρησης (π.χ. προώθηση, διαφήμι
    Ε.2
   </div>
   <div class="col-xs-9">
-Συνάφεια Τίτλου Σπουδών με το επιχειρηματικό σχέδιο
-<p>
-  </div>
-  <div class="col-xs-2">
-25%
-  </div>  
-</div>
-
-<div class="row">
-
-  <div class="col-xs-1">
- 
-  </div>
-  <div class="col-xs-9">
-Εξετάζεται και βαθμολογείται η τυχόν συνάφεια των σπουδών του εταίρου/εταίρων με την
-οικονομική δραστηριότητα της επιχείρησης.
-
+<h4>Συνάφεια Τίτλου Σπουδών με το επιχειρηματικό σχέδιο - 25%</h4>
+<p>Εξετάζεται και βαθμολογείται η τυχόν συνάφεια των σπουδών του εταίρου/εταίρων με την
+οικονομική δραστηριότητα της επιχείρησης.</p>
   </div>
   <div class="col-xs-2">
 <div class="form-group">
-  <label for="kathgoria">Συνάφεια σπουδών</label>
+  <label >Συνάφεια σπουδών</label>
   <select class="form-control" ng-model="selectE2" ng-change="changeE2(selectE2)">
     <option>Ναι:10</option>
     <option>Όχι:0</option>
  </select>
 </div>
-  </div>
-
-  
+  </div>  
 </div>
+
+
 
 <div class="row">
 
@@ -947,38 +712,23 @@ marketing της επιχείρησης (π.χ. προώθηση, διαφήμι
    Ε.3
   </div>
   <div class="col-xs-9">
-Επαγγελματική Εμπειρία Εταίρου/ Εταίρων
-<p>
-  </div>
-  <div class="col-xs-2">
-10%
-  </div>  
-</div>
-
-<div class="row">
-
-  <div class="col-xs-1">
- 
-  </div>
-  <div class="col-xs-9">
-Εξετάζεται και βαθμολογείται η συνολική επαγγελματική εμπειρία του εταίρου/των εταίρων
-κατά την υποβολή της αίτησης χρηματοδότησης.
-
+<h4>Επαγγελματική Εμπειρία Εταίρου/ Εταίρων - 10%</h4>
+<p>Εξετάζεται και βαθμολογείται η συνολική επαγγελματική εμπειρία του εταίρου/των εταίρων
+κατά την υποβολή της αίτησης χρηματοδότησης.</p>
   </div>
   <div class="col-xs-2">
 <div class="form-group">
-  <label for="kathgoria">Επαγγελματική εμπειρία</label>
+  <label >Επαγγελματική εμπειρία</label>
   <select class="form-control" ng-model="selectE3" ng-change="changeE3(selectE3)">
-    <option>Εμπειρία> 5 ετών:10</option>
+    <option>Εμπειρία > 5 ετών:10</option>
     <option>Εμπειρία 0-5 ετών:0-10</option>
 	
 
   </select>
 </div>
-  </div>
-
-  
+  </div>  
 </div>
+
 
 <div class="row">
 
@@ -986,26 +736,13 @@ marketing της επιχείρησης (π.χ. προώθηση, διαφήμι
    Ε.4
   </div>
   <div class="col-xs-9">
-Εταιρική Σύνθεση
-<p>
-  </div>
-  <div class="col-xs-2">
-50%
-  </div>  
-</div>
-
-<div class="row">
-
-  <div class="col-xs-1">
- 
-  </div>
-  <div class="col-xs-9">
-Εξετάζεται και βαθμολογείται η εταιρική σύνθεση ως προς την κάλυψη όλου του εύρους του
-αντικειμένου του επιχειρηματικού σχεδίου.
+<h4>Εταιρική Σύνθεση - 50%</h4>
+<p>Εξετάζεται και βαθμολογείται η εταιρική σύνθεση ως προς την κάλυψη όλου του εύρους του
+αντικειμένου του επιχειρηματικού σχεδίου.</p>
   </div>
   <div class="col-xs-2">
 <div class="form-group">
-  <label for="kathgoria">Εταιρική σύνθεση</label>
+  <label >Εταιρική σύνθεση</label>
   <select class="form-control" ng-model="selectE4" ng-change="changeE4(selectE4)">
     <option>Ένωση εταίρων με συμπληρωματικές
 ειδικεύσεις/δεξιότητες:10</option>
@@ -1015,26 +752,31 @@ marketing της επιχείρησης (π.χ. προώθηση, διαφήμι
 
   </select>
 </div>
-  </div>
-
-  
+  </div>  
 </div>
-
-Σε περίπτωση δημιουργίας εταιρικού σχήματος:
-α) Η βαθμολογία του κριτηρίου E: ΧΑΡΑΚΤΗΡΙΣΤΙΚΑ ΕΤΑΙΡΩΝ θα προκύπτει από τον σταθμικό μέσο όρο της βαθμολογίας των
-εταίρων, υπολογιζόμενο ανάλογα με το ποσοστό συμμετοχής τους στο εταιρικό σχήμα.
-Όλες οι αιτήσεις χρηματοδότησης, που βάσει των παραπάνω κριτηρίων και συντελεστών συγκεντρώνουν βαθμολογία από πενήντα (50,0)
+<hr>
+<div class="row">
+<div class="col-xs-12">
+<p>
+Σε περίπτωση δημιουργίας εταιρικού σχήματος:</br>
+Η βαθμολογία του κριτηρίου E: ΧΑΡΑΚΤΗΡΙΣΤΙΚΑ ΕΤΑΙΡΩΝ θα προκύπτει από τον σταθμικό μέσο όρο της βαθμολογίας των
+εταίρων, υπολογιζόμενο ανάλογα με το ποσοστό συμμετοχής τους στο εταιρικό σχήμα.</br></br>
+Όλες οι αιτήσεις χρηματοδότησης, που βάσει των παραπάνω κριτηρίων και συντελεστών συγκεντρώνουν βαθμολογία από πενήντα <strong>(50,0)</strong>
 και άνω, μετά την εφαρμογή ανάλογων ομάδων κριτηρίων είναι κατ’ αρχήν επιλέξιμες μέχρι εξαντλήσεως του προϋπολογισμού.
+</p>
+</div>
+</div>
+<div class="row">
+<div class="col-xs-12">
 <h2>Βαθμολογία κριτηρίων σε κλίμακα 100 βαθμών</h2>
 <p>
-Αφού αποδοθούν τιμές στα κριτήρια σύμφωνα με τους ανωτέρω πίνακες διαμορφώνεται ως εξής η βαθμολόγηση των κριτηρίων:
+Βαθμολογία κριτηρίου Α = ( ([{{minA1}}-{{maxA1}}]*20%)+({{A2}}*25%)+({{A3}}*25%)+({{A4}}*5%)+({{A5}}*10%)+({{A6}}*10)+({{A7}}*5%) )*10 = <strong>{{minResultA()}} - {{maxResultA()}}</strong></br>
+Βαθμολογία κριτηρίου Β = (({{B1}}*30%) + ({{B2}}*20%) + ({{B3}}*50%))*10 = <strong>{{resultB()}}</strong></br>
+Βαθμολογία κριτηρίου Γ = (({{G1}}*30%) + ({{G2}}*30%) + ({{G3}}*10%) + ({{G4}}*30%))*10 = <strong>{{resultG()}}</strong></br>
+Βαθμολογία κριτηρίου Δ = (({{D1}}*30%)+({{D2}}*70%))*10 = <strong>{{resultD()}}</strong></br>
+Βαθμολογία κριτηρίου Ε = (({{E1}}*15%) + ({{E2}}*25%) + ([{{minE3}}-{{maxE3}}]*10%) + ({{E4}}*50%))*10 = <strong>{{minResultE()}} - {{maxResultE()}}</strong></br>
+<span class="finalResult">ΣΥΝΟΛΙΚΗ ΒΑΘΜΟΛΟΓΙΑ = [{{minResultA()}}-{{maxResultA()}}]*25% + {{resultB()}}*15% + {{resultG()}}*25% + {{resultD()}}*10% +[{{minResultE()}}-{{maxResultE()}}]*25% = <strong>{{resultFinalMin()}} - {{resultFinalMax()}}</strong></span></br>
 </p>
-<p>
-Βαθμολογία κριτηρίου Α = ({{A1}}*20%)+({{A2}}*25%)+({{A3}}*25%)+({{A4}}*5%)+({{A5}}*10%)+({{A6}}*10)+({{A7}}*5%))*10={{resultA()}}</br>
-Βαθμολογία κριτηρίου Β = (({{B1}}*30%) + ({{B2}}*20%) + ({{B3}}*50%))*10={{resultB()}}</br>
-Βαθμολογία κριτηρίου Γ = (({{G1}}*30%) + ({{G2}}*30%) + ({{G3}}*10%) + ({{G4}}*30%))*10={{resultG()}}</br>
-Βαθμολογία κριτηρίου Δ = (({{D1}}*30%)+({{D2}}*70%))*10={{resultD()}}</br>
-Βαθμολογία κριτηρίου Ε = (({{E1}}*15%) + ({{E2}}*25%) + ({{E3}}*10%) + ({{E4}}*50%))*10={{resultE()}}</br>
-ΣΥΝΟΛΙΚΗ ΒΑΘΜΟΛΟΓΙΑ = {{resultA()}}*25% + {{resultB()}}*15% + {{resultG()}}*25% + {{resultD()}}*10% +{{resultE()}}*25%={{resultFinal()}}</br>
-</p>
+</div>
+</div>
 </form>
