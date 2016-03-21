@@ -29,6 +29,31 @@ if(minmax=="min"){
 	return matches[1];
 }
 		
+		}, 
+		changeInputA1Oik:function(input){
+		if(input<=12000){
+				return 10;
+			}else if(input<=35000){
+				return (((35000-input)/12500)*10).toFixed(2);
+			}else{
+				return 0};	
+		},
+		changeInputA1Ato:function(input){
+			if(input<=7500){
+				return 10;
+			}else if(input<=20000){
+				return (((20000-input)/12500)*10).toFixed(2);
+			}else{
+				return 0};
+		
+		},
+		changeInputG1:function(months){
+			if(months>=12){
+				return 10;
+			}else{
+				return months/12*10;
+				}
+
 		}
 	};
 
