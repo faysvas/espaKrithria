@@ -19,7 +19,7 @@
   <div class="col-xs-12">
   <div class="form-group">
   <label for="kathgoria">Κατηγορία Δικαιούχου</label>
-  <select class="form-control" id="kathgoria">
+  <select ng-model="kathgoriaDikaiouxou" class="form-control" id="kathgoria">
     <option>Κατηγορία Δικαιούχων - Α (Άνεργοι)</option>
     <option>Κατηγορία Δικαιούχων - Β (Αυτοαπασχολούμενοι)</option>
   </select>
@@ -30,7 +30,7 @@
 <div>
 
 <h3>Υποκριτήρια Επιλεξιμότητας</h3>
-<div class="row">
+<div ng-show="kathgoriaDikaiouxou=='Κατηγορία Δικαιούχων - Α (Άνεργοι)'" class="row">
 
   <div class="col-xs-1">
     Α.Α.2.1
@@ -47,7 +47,7 @@
   </div>
   
 </div>
-<div class="row">
+<div ng-show="kathgoriaDikaiouxou=='Κατηγορία Δικαιούχων - Β (Ασκούντες επαγγελματική δραστηριότητα)'" class="row">
 
   <div class="col-xs-1">
     Α.Α.2.1
@@ -262,7 +262,7 @@
   <div class="col-xs-12">
   <div class="form-group">
   <label for="kathgoria">Τύπος Εισοδήματος</label>
-  <select class="form-control" id="kathgoria">
+  <select ng-model="kathgoriaEisodhmatos" class="form-control" >
     <option>Ατομικό Εισόδημα</option>
     <option>Οικογενειακό Εισόδημα</option>
   </select>
@@ -270,7 +270,7 @@
   </div>
   
 </div>
-<div class="row">
+<div class="row" ng-show="kathgoriaEisodhmatos=='Ατομικό Εισόδημα'">
   <div class="col-xs-1">
     Α1
   </div>
@@ -291,12 +291,12 @@
   </div>
   
 </div>
-<div class="row">
+<div class="row" ng-show="kathgoriaEisodhmatos=='Οικογενειακό Εισόδημα'">
   <div class="col-xs-1">
     Α1
   </div>
   <div class="col-xs-2">
-    Ατομικό Εισόδημα
+    Οικογενειακό Εισόδημα
   </div>
   <div class="col-xs-5">
   Εξετάζεται το οικογενειακό εισόδημα του εταίρου ή
@@ -337,9 +337,9 @@
     <div class="form-group">
   <label for="kathgoria">Επιλέξτε Βαθμολογία</label>
   <select class="form-control" id="kathgoria">
-    <option>Πολύ Καλή</option>
-    <option>Καλή</option>
-	<option>Ανεπαρκής</option>
+    <option>Πολύ Καλή:8-10</option>
+    <option>Καλή:5-7</option>
+	<option>Ανεπαρκής:0-4</option>
   </select>
 </div>
   </div>
@@ -369,9 +369,9 @@
     <div class="form-group">
   <label for="kathgoria">Επιλέξτε Βαθμολογία</label>
   <select class="form-control" id="kathgoria">
-    <option>Πολύ ικανοποιητικές</option>
-    <option>Ικανοποιητικές</option>
-	<option>Ανεπαρκείς</option>
+    <option>Πολύ ικανοποιητικές:10</option>
+    <option>Ικανοποιητικές:6</option>
+	<option>Ανεπαρκείς:0</option>
   </select>
 </div>
   </div>
@@ -390,32 +390,27 @@
   </div>
   <div class="col-xs-5">
    Εξετάζονται η χρονική διάρκεια ανεργίας στην
-περίπτωση του ανέργου εταίρου. Ανεργία
-μεγαλύτερη/ίση του 1 έτους πριμοδοτείται με 10
-βαθμούς, ενώ ανεργία μικρότερη του ενός (1)
-έτους βαθμολογείται αναλογικά με το χρόνο
-ανεργίας. Επισημαίνεται ότι στον υπολογισμό
+περίπτωση του ανέργου εταίρου. Επισημαίνεται ότι στον υπολογισμό
 του χρόνου ανεργίας, λαμβάνεται υπόψη η
 καταληκτική ημερομηνία υποβολής των
 αιτήσεων χρηματοδότησης, ανεξαρτήτως του
 υποβολής τους.
 Εξετάζεται η έναρξη επιχειρηματικής δραστηριότητας
 στην περίπτωση του αυτοαπασχολούμενου.
-Πριμοδοτούνται αυτοί που έκαναν έναρξη μετά την
-1.1.2011 και βαθμολογούνται με 10 βαθμούς.
-Αυτοί που έκαναν έναρξη πριν την 1.1.2011
-βαθμολογούνται με 4 βαθμούς.
+
   </div>
    <div class="col-xs-1">
    80%
   </div>
    <div class="col-xs-3">
+   <div ng-show="kathgoriaDikaiouxou=='Κατηγορία Δικαιούχων - Α (Άνεργοι)'">
   Ανεργία σε μήνες:<input type="text" class="form-control">
-     <div class="form-group">
+  </div>
+     <div ng-show="kathgoriaDikaiouxou=='Κατηγορία Δικαιούχων - Β (Ασκούντες επαγγελματική δραστηριότητα)'" class="form-group">
   <label for="kathgoria">Έναρξη Επιχείρησης</label>
   <select class="form-control" id="kathgoria">
-    <option>Μετά τη 1.1.2011</option>
-    <option>Πριν τη 1.1.2011</option>
+    <option>Μετά τη 1.1.2011:10</option>
+    <option>Πριν τη 1.1.2011:4</option>
 	
   </select>
 </div>
@@ -442,16 +437,16 @@
    <div class="col-xs-3">
 
      <div class="form-group">
-  <label for="kathgoria">Έναρξη Επιχείρησης</label>
+  <label for="kathgoria">Συνεργασία</label>
   <select class="form-control" id="kathgoria">
     <option>Ύπαρξη τεκμηριωμένης συνεργασίας μεταξύ
 ανέργου και αυτοαπασχολούμενου ίδιας ή
-συμπληρωματικών ειδικοτήτων</option>
+συμπληρωματικών ειδικοτήτων:10</option>
     <option>Ύπαρξη συνεργασίας μεταξύ
 αυτοαπασχολούμενων ίδιας ή συμπληρωματικών
-ειδικοτήτων</option>
+ειδικοτήτων:10</option>
 <option>Ύπαρξη Συνεργασίας μεταξύ ανέργων ίδιας ή
-συμπληρωματικών ειδικοτήτων</option>
+συμπληρωματικών ειδικοτήτων:10</option>
 <option>Απουσία συνεργασίας ή ανεπάρκεια τεκμηρίωσης</option>
 	
   </select>
@@ -460,13 +455,23 @@
   </div>
   
 </div>
+<div class="row">
+<div class="col-xs-12">
+<h2>Βαθμολογία κριτηρίων σε κλίμακα 100 βαθμών</h2>
+<p>
 Βαθμολογία κριτηρίων σε κλίμακα 100 βαθμών
-Βαθμολογία κριτηρίου Α =(Α1)*10
-Βαθμολογία κριτηρίου Β ={(Β1*40%)+(Β2*60%)}*10
-Βαθμολογία κριτηρίου Γ ={(Γ1*80%)+(Γ2*20%)}*10
-Συνολική Βαθμολογία = Βαθμολογία κριτηρίου Α* 35% + Βαθμολογία κριτηρίου Β* 25% + Βαθμολογία κριτηρίου Γ*40%
+Βαθμολογία κριτηρίου Α ={{A1}}*10=<strong>{{resultA()}}</strong></br>
+Βαθμολογία κριτηρίου Β =(([{{minB1}}-{{maxB1}}]*40%)+({{B2}}*60%))*10=<strong>{{minResultB()}} - {{maxResultB()}}</strong></br>
+Βαθμολογία κριτηρίου Γ =(({{G1}}*80%)+({{G2}}*20%))*10=<strong>{{resultG();}}</strong></br>
+
+<span class="finalResult">ΣΥΝΟΛΙΚΗ ΒΑΘΜΟΛΟΓΙΑ = {{resultA()}}*35% + [{{minResultB()}}-{{maxResultB()}}]*25%+{{resultG()}}*40% +  = <strong>{{resultFinalMin()}} - {{resultFinalMax()}}</strong></span></br>
+
 Σε περίπτωση δημιουργίας εταιρικού σχήματος η βαθμολογία του κριτηρίου A θα προκύπτει από τον σταθμικό μέσο όρο της βαθμολογίας των
 εταίρων.
 
+
+</p>
+</div>
+</div>
 
 </form>
