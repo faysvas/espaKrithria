@@ -56,7 +56,10 @@ $scope.G1=0,$scope.G2=0;
 
 
 
-$scope.changeA1 = function(selectA1){$scope.A1=helpers.changeValue(selectA1);} //Na graftei allh synarthsh pou na diavazei input
+$scope.changeInputA1Ato = function(inputA1Ato){$scope.A1=helpers.changeInputA1Ato(inputA1Ato);} //Na graftei allh synarthsh pou na diavazei input
+
+$scope.changeInputA1Oik = function(inputA1Oik){$scope.A1=helpers.changeInputA1Oik(inputA1Oik);} //Na graftei allh synarthsh pou na diavazei input
+
 $scope.changeA3 = function(selectA3){$scope.A3=helpers.changeValue(selectA3);}
 
 
@@ -64,19 +67,22 @@ $scope.changeB1 = function(selectB1){$scope.minB1=helpers.changeValueRange(selec
 
 $scope.changeB2 = function(selectB2){$scope.B2=helpers.changeValue(selectB2);}
 
-$scope.changeG1 = function(selectG1){$scope.G1=helpers.changeValue(selectG1);}//na graftei allh sunarthsh pou na diavazei input
+$scope.changeSelectG1 = function(selectG1){$scope.G1=helpers.changeValue(selectG1);}//na graftei allh sunarthsh pou na diavazei input
+
+$scope.changeInputG1 = function(inputG1){$scope.G1=helpers.changeInputG1(inputG1);}//na graftei allh sunarthsh pou na diavazei input
+
 $scope.changeG2 = function(selectG2){$scope.G2=helpers.changeValue(selectG2);}
 
-$scope.resultA=function(){return parseInt($scope.A1,10)*10;}
+$scope.resultA=function(){return parseFloat($scope.A1,10)*10;}
 $scope.minResultB=function(){return (parseInt($scope.minB1,10)*40/100+parseInt($scope.B2,10)*60/100)*10;}
 
 $scope.maxResultB=function(){return (parseInt($scope.maxB1,10)*40/100+parseInt($scope.B2,10)*60/100)*10;}
 
-$scope.resultG=function(){return (parseInt($scope.G1,10)*80/100+parseInt($scope.G2,10)*20/100)*10;}
+$scope.resultG=function(){return (parseFloat($scope.G1,10)*80/100+parseInt($scope.G2,10)*20/100)*10;}
 
-$scope.resultFinalMin=function(){return parseInt($scope.resultA(),10)*35/100+parseInt($scope.minResultB(),10)*25/100+parseInt($scope.resultG(),10)*40/100||0;}
+$scope.resultFinalMin=function(){(return parseFloat($scope.resultA(),10)*35/100+parseInt($scope.minResultB(),10)*25/100+parseFloat($scope.resultG(),10)*40/100).toFixed(2)||0;}
 
-$scope.resultFinalMax=function(){return parseInt($scope.resultA(),10)*35/100+parseInt($scope.maxResultB(),10)*25/100+parseInt($scope.resultG(),10)*40/100||0;}
+$scope.resultFinalMax=function(){return (parseFloat($scope.resultA(),10)*35/100+parseInt($scope.maxResultB(),10)*25/100+parseFloat($scope.resultG(),10)*40/100).toFixed(2)||0;}
 
 
 
