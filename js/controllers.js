@@ -80,7 +80,7 @@ $scope.maxResultB=function(){return (parseInt($scope.maxB1,10)*40/100+parseInt($
 
 $scope.resultG=function(){return (parseFloat($scope.G1,10)*80/100+parseInt($scope.G2,10)*20/100)*10;}
 
-$scope.resultFinalMin=function(){(return parseFloat($scope.resultA(),10)*35/100+parseInt($scope.minResultB(),10)*25/100+parseFloat($scope.resultG(),10)*40/100).toFixed(2)||0;}
+$scope.resultFinalMin=function(){return (parseFloat($scope.resultA(),10)*35/100+parseInt($scope.minResultB(),10)*25/100+parseFloat($scope.resultG(),10)*40/100).toFixed(2)||0;}
 
 $scope.resultFinalMax=function(){return (parseFloat($scope.resultA(),10)*35/100+parseInt($scope.maxResultB(),10)*25/100+parseFloat($scope.resultG(),10)*40/100).toFixed(2)||0;}
 
